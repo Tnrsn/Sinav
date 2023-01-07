@@ -20,6 +20,7 @@ namespace MyFormm.localhost {
     using System.ComponentModel;
     using System.Web.Services.Protocols;
     using System.Web.Services;
+    using System.Data;
     
     
     /// <remarks/>
@@ -32,6 +33,8 @@ namespace MyFormm.localhost {
         private System.Threading.SendOrPostCallback HarikaToplayiciOperationCompleted;
         
         private System.Threading.SendOrPostCallback MuhtesemSilOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback FevkaladeArayiciOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -76,6 +79,9 @@ namespace MyFormm.localhost {
         
         /// <remarks/>
         public event MuhtesemSilCompletedEventHandler MuhtesemSilCompleted;
+        
+        /// <remarks/>
+        public event FevkaladeArayiciCompletedEventHandler FevkaladeArayiciCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HarikaToplayici", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -137,6 +143,35 @@ namespace MyFormm.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FevkaladeArayici", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable FevkaladeArayici(string ID) {
+            object[] results = this.Invoke("FevkaladeArayici", new object[] {
+                        ID});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FevkaladeArayiciAsync(string ID) {
+            this.FevkaladeArayiciAsync(ID, null);
+        }
+        
+        /// <remarks/>
+        public void FevkaladeArayiciAsync(string ID, object userState) {
+            if ((this.FevkaladeArayiciOperationCompleted == null)) {
+                this.FevkaladeArayiciOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFevkaladeArayiciOperationCompleted);
+            }
+            this.InvokeAsync("FevkaladeArayici", new object[] {
+                        ID}, this.FevkaladeArayiciOperationCompleted, userState);
+        }
+        
+        private void OnFevkaladeArayiciOperationCompleted(object arg) {
+            if ((this.FevkaladeArayiciCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FevkaladeArayiciCompleted(this, new FevkaladeArayiciCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -184,6 +219,32 @@ namespace MyFormm.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void MuhtesemSilCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void FevkaladeArayiciCompletedEventHandler(object sender, FevkaladeArayiciCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FevkaladeArayiciCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FevkaladeArayiciCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
 }
 
 #pragma warning restore 1591

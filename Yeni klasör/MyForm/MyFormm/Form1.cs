@@ -72,5 +72,11 @@ namespace MyFormm
             myObj.MuhtesemSil(Convert.ToInt32(textBox6.Text));
             this.myTableTableAdapter.Fill(this.myDataBaseDataSet.MyTable);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Class1 obj = new Class1();
+            dataGridView1.DataSource = obj.FevkaladeArayici(Convert.ToInt32(textBox6.Text));
+        }
     }
 }

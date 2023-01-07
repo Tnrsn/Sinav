@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace MyForm
 {
@@ -38,6 +39,22 @@ namespace MyForm
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        //[WebMethod] //Bu çalışmıyor inanmıyorsanız deneyin
+        //public DataTable FevkaladeArayici(string ID)
+        //{
+        //    //DataTable ı kullanmak için System.Data; yı include edin
+        //    SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-0BJTEAC\SQLEXPRESS;Initial Catalog=MyDataBase;Integrated Security=True");
+        //    conn.Open();
+
+        //    SqlCommand cmd = new SqlCommand("Select * from MyTable where name = @p1", conn);
+        //    cmd.Parameters.AddWithValue("@p1", ID);
+
+        //    DataTable table = new DataTable();
+
+        //    table.Load(cmd.ExecuteReader());
+        //    conn.Close();
+        //    return table;
+        //}
 
     }
 }

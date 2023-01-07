@@ -27,6 +27,27 @@
       <s:element name="MuhtesemSilResponse">
         <s:complexType />
       </s:element>
+      <s:element name="FevkaladeArayici">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FevkaladeArayiciResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FevkaladeArayiciResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HarikaToplayiciSoapIn">
@@ -41,6 +62,12 @@
   <wsdl:message name="MuhtesemSilSoapOut">
     <wsdl:part name="parameters" element="tns:MuhtesemSilResponse" />
   </wsdl:message>
+  <wsdl:message name="FevkaladeArayiciSoapIn">
+    <wsdl:part name="parameters" element="tns:FevkaladeArayici" />
+  </wsdl:message>
+  <wsdl:message name="FevkaladeArayiciSoapOut">
+    <wsdl:part name="parameters" element="tns:FevkaladeArayiciResponse" />
+  </wsdl:message>
   <wsdl:portType name="MyWebServiceSoap">
     <wsdl:operation name="HarikaToplayici">
       <wsdl:input message="tns:HarikaToplayiciSoapIn" />
@@ -49,6 +76,10 @@
     <wsdl:operation name="MuhtesemSil">
       <wsdl:input message="tns:MuhtesemSilSoapIn" />
       <wsdl:output message="tns:MuhtesemSilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FevkaladeArayici">
+      <wsdl:input message="tns:FevkaladeArayiciSoapIn" />
+      <wsdl:output message="tns:FevkaladeArayiciSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MyWebServiceSoap" type="tns:MyWebServiceSoap">
@@ -71,6 +102,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FevkaladeArayici">
+      <soap:operation soapAction="http://tempuri.org/FevkaladeArayici" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="MyWebServiceSoap12" type="tns:MyWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -85,6 +125,15 @@
     </wsdl:operation>
     <wsdl:operation name="MuhtesemSil">
       <soap12:operation soapAction="http://tempuri.org/MuhtesemSil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FevkaladeArayici">
+      <soap12:operation soapAction="http://tempuri.org/FevkaladeArayici" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
