@@ -1,0 +1,14 @@
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\bin\Debug\MyFormm.exe.config
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\bin\Debug\MyFormm.exe
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\bin\Debug\MyFormm.pdb
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\obj\Debug\MyFormm.csproj.AssemblyReference.cache
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\obj\Debug\MyFormm.csproj.SuggestedBindingRedirects.cache
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\obj\Debug\MyFormm.Form1.resources
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\obj\Debug\MyFormm.Properties.Resources.resources
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\obj\Debug\MyFormm.csproj.GenerateResource.cache
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\obj\Debug\MyFormm.csproj.CoreCompileInputs.cache
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\obj\Debug\MyFormm.exe
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\obj\Debug\MyFormm.pdb
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\bin\Debug\MyLibrary.dll
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\bin\Debug\MyLibrary.pdb
+C:\Users\tnrsn\Desktop\Yeni klasör\MyForm\MyFormm\obj\Debug\MyFormm.csproj.CopyComplete
